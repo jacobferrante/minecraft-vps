@@ -12,5 +12,5 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
-          source: "docker/minecraft/server/bta/docker-compose.yml"
-          target: /home/minecraft/server  
+          source: "docker/"
+          target: /home/minecraft 
