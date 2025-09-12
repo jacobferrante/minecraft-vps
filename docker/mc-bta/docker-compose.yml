@@ -12,7 +12,7 @@ services:
       CUSTOM_SERVER: "https://github.com/Better-than-Adventure/bta-download-repo/releases/download/v7.3_04/bta.v7.3_04.server.jar"
       DIFFICULTY: "2"
       ENABLE_WHITELIST: "TRUE"
-      WHITELIST_FILE: "../white-list.txt"
+      WHITELIST_FILE: "white-list.txt"
     volumes:
       # attach the relative directory 'data' to the container's /data path
       - ./data:/data
