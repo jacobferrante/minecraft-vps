@@ -1,6 +1,9 @@
 # Minecraft VPS
 This repo houses docker, IaC, etc for my minecraft server setup. The goal here is DevOps-ify minecraft servers, as I like to play different older version of minecraft, and minimize server setup time based on the "Two week Minecraft Phase" we're all familiar with.
 
+# Dockge
+[Dockge](https://github.com/louislam/dockge) is a self-hosted docker compose manager. It allows me to start and stop docker services via a web app.
+
 ## Minecraft Server
 I'm using the [Minecraft Docker Image](https://hub.docker.com/r/itzg/minecraft-server/) to host a few different Minecraft servers. A latest release version, a r1.6.4 and [Better Than Adventure](https://www.betterthanadventure.net/) server. Docker allows me to spin these servers up and down quickly, make changes using docker compose files and allow for ci/cd. 
 
