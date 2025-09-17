@@ -1,5 +1,3 @@
-name: minecraft-1.6.4
-
 services:
   mc:
     image: itzg/minecraft-server
