@@ -6,11 +6,23 @@ jobs:
     environment: dev
     steps:
       - uses: actions/checkout@v4
-      - name: Copy files via SSH
+
+      - name: Copy compose files via scp
         uses: appleboy/scp-action@v1
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
-          source: "docker/mc-1-6-4, docker/mc-bta, docker/mc-latest"
-          target: /home/minecraft 
+          source: "docker/minecraft"
+          target: /opt/stacks
+          strip_components: 2
+
+      - name: Copy shared files via scp 
+        uses: appleboy/scp-action@v1
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          source: "docker/shared"
+          target: /srv/minecraft/shared
+          strip_components: 2

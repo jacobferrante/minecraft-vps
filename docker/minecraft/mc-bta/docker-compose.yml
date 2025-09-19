@@ -1,7 +1,7 @@
 services:
   mc:
     image: itzg/minecraft-server
-    container_name: minecraft-1.6.4
+    container_name: minecraft-bta
     tty: true
     stdin_open: true
     ports:
@@ -9,11 +9,11 @@ services:
     environment:
       EULA: "TRUE"
       MEMORY: "4096M"
-      VERSION: "1.6.4"
+      TYPE: "CUSTOM"
+      CUSTOM_SERVER: "https://github.com/Better-than-Adventure/bta-download-repo/releases/download/v7.3_04/bta.v7.3_04.server.jar"
       DIFFICULTY: "2"
       ENABLE_WHITELIST: "TRUE"
-      WHITELIST_FILE: "white-list.txt"
     volumes:
       # attach the relative directory 'data' to the container's /data path
       - ./data:/data
-
+      - /srv/minecraft/shared/white-list.txt:/data/white-list.txt

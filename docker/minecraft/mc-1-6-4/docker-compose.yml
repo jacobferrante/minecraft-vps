@@ -1,18 +1,19 @@
 services:
   mc:
     image: itzg/minecraft-server
-    container_name: minecraft-latest
+    container_name: minecraft-1.6.4
     tty: true
     stdin_open: true
     ports:
       - "25565:25565"
     environment:
-      EULA: "TRUE"
-      MEMORY: "2048M"
-      DIFFICULTY: "2"
-      ENABLE_WHITELIST: "TRUE"
-      WHITELIST_FILE: "white-list.txt"
+      eula: "true"
+      memory: "4096m"
+      version: "1.6.4"
+      difficulty: "2"
+      enable_whitelist: "true"
     volumes:
       # attach the relative directory 'data' to the container's /data path
       - ./data:/data
+      - /srv/minecraft/shared/white-list.txt:/data/white-list.txt
 
